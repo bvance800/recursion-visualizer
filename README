@@ -1,0 +1,19 @@
+TODO Functionality:
+
+- user can generate a random grid of 1s and 0s in a number of different programming language syntaxes
+  ie, python, java, c++, etc. so they can copy it, or download it, and test their own code against the maze machine.
+
+UI 
+- Ability for user to
+    - set size of maze (length of each square)
+    - set dimensions of maze
+    - set color of maze
+    - switch between pseudo code visualized or actual code
+    - Select which directions the maze traversal can use (UP, DOWN, LEFT, RIGHT)
+    - switch omments on and off
+
+
+
+Documentation:
+
+Entry: there is a canvase

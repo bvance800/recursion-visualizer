@@ -1,0 +1,45 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maze Traversal</title>
+        <script src="https://unpkg.com/vue@next"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div id="content" class="container mx-auto my-5">
+                <div class="row">
+                    
+                    <div class="col-md-6 mb-4">
+                        <div id="codeblock" class="border p-2">
+                            <div class="lineOfCode" :class="{ activeLineOfCode : n == machine.activeLineOfCode }" v-for="n in machine.linesOfCode" >
+                                {{n}}
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <canvas id="maze" :class="{ border : machine.canvas.border }" class="mb-3"></canvas>
+                        <div class="row">
+                            <div class="col d-flex">
+                                <button @click="machine.stepBackLineOfCode()" type="button" class=" ml-auto mr-2 btn btn-warning">Back</button>
+                                <button id="play-btn" @click="pressPlay()" type="button"  class=" mr-2 btn btn-success">Play</button>
+                                <button id="pause-btn" @click="pressPause()" type="button"  class="d-none mr-2 btn btn-success">Pause</button>
+                                <button @click="machine.stepNextLineOfCode()" type="button" class="mr-auto btn btn-warning">Step</button>
+                            </div>
+                        </div>
+                        <h1>Paths through maze: {{machine.maze.numberOfPaths}}</h1>
+                        <h2>MazeMachine: {{machine.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="MazeMachine.js"></script>
+    <script src="app.js"></script>
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+</html><html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maze Traversal</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="app">
+            <div id="content" class="container mx-auto my-5">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <canvas id="maze" class="border" class="mb-3"></canvas>
+                        <div class="row">
+                            <div class="col d-flex">
+                                <button onclick="machine.stepBackLineOfCode()" type="button" class=" ml-auto mr-2 btn btn-warning">Back</button>
+                                <button id="play-btn" onclick="pressPlay()" type="button"  class=" mr-2 btn btn-success">Play</button>
+                                <button id="pause-btn" onclick="pressPause()" type="button"  class="d-none mr-2 btn btn-success">Pause</button>
+                                <button onclick="machine.stepNextLineOfCode()" type="button" class="mr-auto btn btn-warning">Step</button>
+                            </div>
+                        </div>
+                        <h1 id="paths-count">Paths through maze: {{machine.maze.numberOfPaths}}</h1>
+                        <h2>MazeMachine: {{machine.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="MazeMachine.js"></script>
+    <script src="app-non-vue.js"></script>
+</html>
